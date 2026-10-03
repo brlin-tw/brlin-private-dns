@@ -1,0 +1,34 @@
+# Inventory file for the test environment
+#
+# References:
+#   - How to build your inventory — Ansible Documentation
+#     https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html
+#
+# Copyright 2021 The Common Ansible Project Template Contributors <https://github.com/the-common/ansible-project-template/graphs/contributors>
+# SPDX-License-Identifier: CC-BY-SA-4.0
+all:
+  hosts:
+    test:
+      ansible_host: 192.168.56.221
+      ansible_port: 22
+      ansible_user: vagrant
+      ansible_password: vagrant
+
+      bind_zones:
+        - name: example.com
+          primaries:
+            - '{{ ansible_host }}'
+          name_servers:
+            - ns1.example.com.
+          networks:
+            - 192.168.56
+          hosts:
+            - name: ns1
+              ip: '{{ ansible_host }}'
+
+      bind_listen_ipv4:
+        - any
+      bind_allow_query:
+        - any
+      bind_allow_recursion:
+        - any
