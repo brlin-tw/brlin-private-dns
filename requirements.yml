@@ -20,7 +20,7 @@
 roles:
   - name: brlin-tw.bind
     src: https://github.com/brlin-tw/ansible-role-bind.git
-    version: v6.0.0
+    version: v6.1.1
 
 collections: []
   # Install a collection from Ansible Galaxy.
