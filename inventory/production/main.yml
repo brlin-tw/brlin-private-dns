@@ -1,0 +1,50 @@
+# Inventory file for the production environment
+#
+# References:
+#   - How to build your inventory — Ansible Documentation
+#     https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html
+#
+# Copyright 2021 The Common Ansible Project Template Contributors <https://github.com/the-common/ansible-project-template/graphs/contributors>
+# Copyright 2026 林博仁(Buo-ren Lin) <buo.ren.lin@gmail.com>
+# SPDX-License-Identifier: AGPL-3.0-or-later
+all:
+  hosts:
+    brlin-rpi5:
+      ansible_host: 192.168.128.197
+      ansible_user: brlin
+      ansible_password: !vault |
+        $ANSIBLE_VAULT;1.1;AES256
+        38626531383830396665343330363265336161323864636339363530663661633462323533316366
+        3232353331393831373938393663396233616266653363340a383533383230386230343132633332
+        38376436653431623435653537396565393535633031653662363533326162353138313966636239
+        3465343439373966320a346564646164336462616137396564343633633130666563313034326336
+        32613538613839353138653466373666373161623833303564373234313936663262
+      ansible_become_password: '{{ ansible_password }}'
+
+      bind_zones:
+        - name: infra.brlin.me
+          primaries:
+            - '{{ ansible_host }}'
+          name_servers:
+            - rpi5.infra.brlin.me.
+          networks:
+            - 192.168.128
+          hosts:
+            - name: rpi5
+              ip: '{{ ansible_host }}'
+            - name: rpi5-wifi
+              ip: 192.168.128.196
+            - name: ts-453a
+              ip: 192.168.128.200
+              aliases:
+                - nas
+            - name: router
+              ip: 192.168.128.254
+
+      bind_listen_ipv4:
+        - any
+      bind_allow_query:
+        - any
+      bind_allow_recursion:
+        - any
+      bind_recursion: true
