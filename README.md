@@ -7,6 +7,13 @@ Servicing resolution requests for the public and private domain names in my resi
 
 \#ansible \#automation
 
+## References
+
+The following materials are referenced during the development of this project:
+
+* [bertvv/ansible-role-bind: Sets up ISC BIND as an authoritative DNS server on several Linux distros & FreeBSD](https://github.com/bertvv/ansible-role-bind)  
+  Explains on how to use the bertvv.bind Ansible role.
+
 ## Licensing
 
 Unless otherwise noted([comment headers](https://reuse.software/spec-3.3/#comment-headers)/[REUSE.toml](https://reuse.software/spec-3.3/#reusetoml)), this product is licensed under [the 3.0 version of the GNU Affero General Public License license](https://www.gnu.org/licenses/agpl-3.0.html), or any of its more recent versions of your preference.
