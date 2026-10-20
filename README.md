@@ -51,6 +51,18 @@ To deploy this product, follow these steps:
 
    You may also need to provide the vault password when prompted, depending on your Ansible vault configuration.  Drop the `--ask-vault-pass` command option if you don't use Ansible vault.
 
+## Operations
+
+This section provides information on how to operate and manage the deployed product.
+
+### Secrets
+
+The following secrets are used by the deployed product:
+
+#### Ansible vault password to decrypt the secrets in the `production` inventory
+
+**Location:** The `（Ansible 機密庫）brlin-private-dns` item in Buo-ren Lin's Bitwarden vault.
+
 ## References
 
 The following materials are referenced during the development of this project:
