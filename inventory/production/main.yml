@@ -32,6 +32,8 @@ all:
           hosts:
             - name: rpi5
               ip: '{{ ansible_host }}'
+              aliases:
+                - pki
             - name: rpi5-wifi
               ip: 192.168.128.196
             - name: ts-453a
