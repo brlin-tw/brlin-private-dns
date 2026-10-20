@@ -25,6 +25,31 @@ The following prerequisites must be met before using this product:
 * You need to have SSH access to the managed nodes
 * You need to have administrative privileges on the managed nodes.
 
+### How to deploy
+
+To deploy this product, follow these steps:
+
+1. Download the release archive from [the Releases page](https://gitlab.com/brlin/brlin-private-dns/-/releases).
+1. Extract the release archive to your preferred directory.
+1. Navigate to the extracted directory and edit [the inventory files](inventory/) as needed to match your environment.
+1. Launch a text terminal.
+1. Run te following command to switch the working directory to the extracted directory:
+
+    ```bash
+    cd <extracted-directory>
+    ```
+
+   Replace the `<extracted-directory>` placeholder with the path to the directory where you extracted the release archive.
+1. Run the Ansible playbook to deploy the product to the managed nodes:
+
+    ```bash
+    ansible-playbook -i inventory/production --ask-vault-pass playbooks/deploy-bind.yml
+    ```
+
+   Replace `inventory/production` if you're using a different inventory file.
+
+   You may also need to provide the vault password when prompted, depending on your Ansible vault configuration.  Drop the `--ask-vault-pass` command option if you don't use Ansible vault.
+
 ## References
 
 The following materials are referenced during the development of this project:
