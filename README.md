@@ -7,6 +7,24 @@ Servicing resolution requests for the public and private domain names in my resi
 
 \#ansible \#dns \#bind
 
+## Usage
+
+This section explains on how to use this product:
+
+### Prerequisites
+
+The following prerequisites must be met before using this product:
+
+* You need to have the following software installed on [the Ansible control node](https://docs.ansible.com/projects/ansible/latest/network/getting_started/basic_concepts.html#control-node):
+    + Ansible  
+      For the automation runtime itself.
+    + [netaddr](https://netaddr.readthedocs.io/en/latest/)  
+      Dependency of the brlin-tw.bind Ansible role, must be installed in the same environment as Ansible.
+    + [dnspython](https://www.dnspython.org/)  
+      Dependency of the brlin-tw.bind Ansible role, must be installed in the same environment as Ansible.
+* You need to have SSH access to the managed nodes
+* You need to have administrative privileges on the managed nodes.
+
 ## References
 
 The following materials are referenced during the development of this project:
