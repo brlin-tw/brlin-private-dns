@@ -24,6 +24,7 @@ The following prerequisites must be met before using this product:
       Dependency of the brlin-tw.bind Ansible role, must be installed in the same environment as Ansible.
 * You need to have SSH access to the managed nodes
 * You need to have administrative privileges on the managed nodes.
+* (OPTIONAL) You need to have the password to decrypt the Ansible vault if you are using it.
 
 ### How to deploy
 
